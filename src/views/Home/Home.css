@@ -1,0 +1,19 @@
+.todo-card{ border: 1px solid #ccc; margin:20px; padding: 5px 20px ; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; position: relative; } 
+.todo-icon{ font-size: 40px; margin: 1 20px; } 
+.todo-priority{ background-color: black; position: absolute; top:5px; right: 5px; color:white; padding:5px 10px; min-width: 50px; text-align: center; border-radius: 50px; margin-right: 5px; } 
+
+
+.todo-createdat{ position: absolute; bottom:10px; right: 10px; } 
+.todo-done{ text-decoration: line-through; color: gray; }
+
+
+.button{
+    position: fixed;
+    right:40px;
+    bottom: 40px;
+    background-color: black;
+    color:white;
+    padding:10px  15px;
+    border-radius: 50px;
+    text-decoration: none;
+}

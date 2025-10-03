@@ -1,0 +1,19 @@
+.button{
+    position: fixed;
+    bottom:40px
+}
+
+.new-todo-form{
+    display: flex;
+    flex-direction: column;
+    gap:12px;
+    width: 300px;
+    padding: 20px 40px;
+    border: 1px solid black;
+    margin:20px auto;
+    border-radius: 20px;
+}
+
+.emoji-button{
+    cursor: pointer;
+}

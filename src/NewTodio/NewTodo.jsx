@@ -19,7 +19,7 @@ function NewTodo() {
   const[emojiPickerOpen,setEmojiPickerOpen]=useState(false);
 
   const addTodo=async()=>{
-    const response=await axios.post(`http://localhost:8080/todos`,todoData);
+    const response=await axios.post(`${import.meta.env.VITE_API_URL}/todos`,todoData);
 
     if(response.data.message){
       alert(response.data.message);

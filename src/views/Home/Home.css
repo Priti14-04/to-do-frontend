@@ -1,19 +1,105 @@
-.todo-card{ border: 1px solid #ccc; margin:20px; padding: 5px 20px ; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; align-items: center; position: relative; } 
-.todo-icon{ font-size: 40px; margin: 1 20px; } 
-.todo-priority{ background-color: black; position: absolute; top:5px; right: 5px; color:white; padding:5px 10px; min-width: 50px; text-align: center; border-radius: 50px; margin-right: 5px; } 
+/* Todo Card */
+.todo-card {
+  margin: 10px;
+  padding: 12px 15px;
+  border-radius: 10px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
+.todo-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
 
-.todo-createdat{ position: absolute; bottom:10px; right: 10px; } 
-.todo-done{ text-decoration: line-through; color: gray; }
+/* Todo Icon */
+.todo-icon {
+  font-size: 28px;
+  margin-right: 12px;
+}
 
+/* Priority Badge */
+.todo-priority {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+}
 
-.button{
-    position: fixed;
-    right:40px;
-    bottom: 40px;
-    background-color: black;
-    color:white;
-    padding:10px  15px;
-    border-radius: 50px;
-    text-decoration: none;
+.todo-priority.low {
+  background-color: #4caf50;
+}
+.todo-priority.medium {
+  background-color: #ff9800;
+}
+.todo-priority.high {
+  background-color: #f44336;
+}
+
+/* Created At */
+.todo-createdat {
+  position: absolute;
+  bottom: 6px;
+  right: 8px;
+  font-size: 10px;
+  color: #555;
+}
+
+/* Done Todo */
+.todo-done {
+  text-decoration: line-through;
+  color: #aaa;
+  font-style: italic;
+}
+
+/* Floating Add Button */
+.button {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background-color: #6c63ff;
+  color: white;
+  padding: 12px 14px;
+  border-radius: 50%;
+  font-size: 18px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.button:hover {
+  transform: scale(1.1);
+}
+
+/* Edit/Delete Icons */
+.icon-edit,
+.icon-delete {
+  position: absolute;
+  top: 10px;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.icon-edit {
+  right: 45px;
+}
+
+.icon-delete {
+  right: 15px;
+}
+
+.icon-edit:hover,
+.icon-delete:hover {
+  transform: scale(1.2);
 }

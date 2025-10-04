@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import { useState } from 'react';
 import "./Home.css"
 import axios from 'axios';
+import imgTrash from "./trash.png"
+import imgEdit from "./edit.png"
 
 import { Link } from "react-router-dom";
 
@@ -15,7 +17,7 @@ const loadTodos = async()=>{
   const response = await axios.get(`${import.meta.env.VITE_API_URL}/todos`);
   setTodos(response.data.data);
 
-  console.log(response.data.data);
+  
 }
 
 
@@ -31,6 +33,20 @@ const loadTodos = async()=>{
       alert(response.data.message);
       loadTodos();
     }
+  };
+
+  const markToDoDone = async(id,isDone)=>{
+   
+
+    const response =await axios.patch(
+      `${import.meta.env.VITE_API_URL}/todos/${id}/status`,
+      {isDone:isDone}
+    );
+
+    if(response){
+      loadTodos();
+    }
+
   }
 
   return (
@@ -42,6 +58,11 @@ const loadTodos = async()=>{
         return(
           <div key={id} className='todo-card'>
             <span className="todo-priority">{priority}</span>
+            <input type="checkbox"checked={isDone} onChange={(e)=>{
+              markToDoDone(id,e.target.checked);
+            }}/>
+
+
             <div className='todo-icon'>{emoji}</div>
             <div className='todo-detail'>
           <h2 className={isDone ? "todo-done" : ""}>{todoItem}</h2>
@@ -50,9 +71,18 @@ const loadTodos = async()=>{
             <span className='todo-createdat'>
               {createdAt.replace("T"," ").slice(0,16)}</span>
 
-              <button onClick={()=>{
+              <Link to={`/edit/${id}`}>
+              <img src={imgEdit} alt="edit" 
+             
+              className='icon-edit'/>
+
+              </Link>
+              
+              <img src={imgTrash} alt="Delete" 
+              onClick={()=>{
                 deleteTodo(id);
-              }}>Delete</button>
+              }}  
+              className='icon-delete'/>
           </div>
         )
       })}

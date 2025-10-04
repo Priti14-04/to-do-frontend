@@ -1,0 +1,94 @@
+/* Edit Todo Form */
+.new-todo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 350px;
+    padding: 25px 40px;
+    margin: 40px auto;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.new-todo-form:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.new-todo-form h1 {
+    font-size: 22px;
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Input Fields */
+.new-todo-form input,
+.new-todo-form select {
+    padding: 12px 15px;
+    font-size: 16px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.new-todo-form input:focus,
+.new-todo-form select:focus {
+    border-color: #6c63ff;
+    box-shadow: 0 0 5px rgba(108, 99, 255, 0.5);
+}
+
+/* Emoji Button */
+.emoji-button {
+    display: inline-block;
+    padding: 8px 12px;
+    font-size: 18px;
+    border-radius: 12px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.emoji-button:hover {
+    background-color: #e0e0ff;
+    transform: scale(1.1);
+}
+
+/* Emoji Picker Container */
+.emoji-picker-react {
+    position: absolute;
+    z-index: 100;
+    margin-top: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 15px;
+}
+.update-button{
+    background-color: #6c63ff;
+}
+/* Update Button */
+.new-todo-form button {
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 12px;
+    
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.new-todo-form button:hover {
+   
+    transform: scale(1.05);
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 400px) {
+    .new-todo-form {
+        width: 90%;
+        padding: 20px;
+    }
+}

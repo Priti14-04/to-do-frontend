@@ -2,8 +2,8 @@ import React, { useEffect } from 'react'
 import { useState } from 'react';
 import "./Home.css"
 import axios from 'axios';
-import imgTrash from "./trash.png"
-import imgEdit from "./edit.png"
+import imgTrash from "../../assets/trash.png"
+import imgEdit from "../../assets/edit.png"
 
 import { Link } from "react-router-dom";
 

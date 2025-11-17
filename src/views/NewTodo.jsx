@@ -55,7 +55,7 @@ function NewTodo() {
         });
        }}> 
         <option value="low">low Priority</option>
-        <option value="mediun">medium Priority</option>
+        <option value="medium">medium Priority</option>
         <option value="high">high Priority</option>
        </select>
 

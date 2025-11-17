@@ -55,9 +55,10 @@ const loadTodos = async()=>{
       {todos.map((todoObj)=>{
 
         const {id,todoItem,priority,emoji,isDone,createdAt}=todoObj;
+        const priorityClass = `todo-priority ${priority ? String(priority).toLowerCase().replace('mediun','medium') : ''}`;
         return(
           <div key={id} className='todo-card'>
-            <span className="todo-priority">{priority}</span>
+            <span className={priorityClass}>{priority}</span>
             <input type="checkbox"checked={isDone} onChange={(e)=>{
               markToDoDone(id,e.target.checked);
             }}/>
